@@ -39,15 +39,15 @@ export const Footer = () => {
             <address className="not-italic text-muted-foreground space-y-2">
               <div className="flex items-center justify-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Estate St, Karen City, Nairobi, Kenya</span>
+                <span>Felma, Kahawa Sukari, Nairobi, Kenya</span>
               </div>
               <a href="mailto:info@lakashehomes.com" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>info@lakashehomes.com</span>
+                <span>ilakashehomes@gmail.com</span>
               </a>
               <a href="tel:+254123456789" className="flex items-center justify-center gap-2 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>+254 123 456 789</span>
+                <span>+254 715 211 673</span>
               </a>
             </address>
 
@@ -133,7 +133,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-muted-foreground text-sm">
-            &copy; 2025 Lakashe Homes. All Rights Reserved | Crafted with ❤️
+            &copy; 2025 Lakashe Homes. All Rights Reserved | Crafted By Bahati Jere Egara
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@ export const Topbar = () => {
       <div className="container mx-auto flex items-center justify-between text-sm">
         <address className="flex items-center gap-2 not-italic text-muted-foreground">
           <MapPin className="w-4 h-4 text-primary" />
-          <span>Lakashe Homes, Karen, Nairobi, Kenya</span>
+          <span>Lakashe Homes, Felma Kahawa Sukari, Nairobi, Kenya</span>
         </address>
         
         <div className="flex items-center gap-6">
@@ -29,14 +29,14 @@ export const Topbar = () => {
           
           <a href="tel:+254123456789" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
             <Phone className="w-4 h-4 text-primary" />
-            <span>+254 123 456 789</span>
+            <span>+254 715 211 673</span>
           </a>
           
           <div className="h-4 w-px bg-primary/30" />
           
           <a href="mailto:info@lakashehomes.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
             <Mail className="w-4 h-4 text-primary" />
-            <span>info@lakashehomes.com</span>
+            <span>lakashehomes.gmail.com</span>
           </a>
         </div>
       </div>

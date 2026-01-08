@@ -41,7 +41,7 @@ export const BookingForm = () => {
               <p className="text-center text-muted-foreground mb-8">
                 Booking request{" "}
                 <a href="tel:+254123456789" className="text-primary hover:underline">
-                  +254 123 456 789
+                  +254 715 211 673 
                 </a>{" "}
                 or fill out the form
               </p>
@@ -159,7 +159,7 @@ export const BookingForm = () => {
                   href="tel:+254123456789"
                   className="text-primary text-2xl font-forum hover-underline inline-block"
                 >
-                  +254 123 456 789
+                  +254 715 211 673
                 </a>
               </div>
 
@@ -171,7 +171,7 @@ export const BookingForm = () => {
                 </p>
                 <address className="not-italic text-muted-foreground">
                   <MapPin className="w-4 h-4 inline mr-2 text-primary" />
-                  Karen Swaychester,<br />
+                  Felma, Kahawa Sukari Mall.<br />
                   Nairobi, Kenya
                 </address>
               </div>

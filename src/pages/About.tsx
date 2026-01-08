@@ -9,6 +9,7 @@ import { Target, Eye, Heart, Users } from "lucide-react";
 import hero2 from "@/assets/hero-2.jpg";
 import about1 from "@/assets/about-1.jpg";
 import about2 from "@/assets/about-2.jpg";
+import collo from "@/assets/collins_image.jpeg"
 
 const values = [
   {
@@ -33,9 +34,9 @@ const values = [
 
 const team = [
   {
-    name: "James Lakashe",
+    name: "Collins Ndwiga",
     role: "Founder & CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face",
+    image: collo,
   },
   {
     name: "Mary Wanjiku",
