@@ -10,6 +10,7 @@ import { properties, PropertyCard } from "@/components/PropertyCard";
 import { BookingForm } from "@/components/BookingForm";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
+import { PropertyMap } from "@/components/PropertyMap";
 
 // Sample gallery images for properties
 import property1 from "@/assets/property-1.jpg";
@@ -233,14 +234,11 @@ const PropertyDetail = () => {
                   is known for its security, serenity, and beautiful surroundings, making it ideal 
                   for families and professionals alike.
                 </p>
-                <div className="aspect-video bg-eerie-2 border border-white/10 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="w-12 h-12 mx-auto mb-4 text-primary" />
-                    <p>Interactive map coming soon</p>
-                    <p className="text-sm">{property.location}, Kenya</p>
-                  </div>
-                </div>
+                <PropertyMap location={property.location} />
               </motion.div>
+
+              {/* Mortgage Calculator */}
+              <MortgageCalculator propertyPrice={property.price} />
             </div>
 
             {/* Sidebar */}
@@ -311,9 +309,6 @@ const PropertyDetail = () => {
                   </a>
                 </div>
               </motion.div>
-
-              {/* Mortgage Calculator */}
-              <MortgageCalculator propertyPrice={property.price} />
             </div>
           </div>
         </div>
