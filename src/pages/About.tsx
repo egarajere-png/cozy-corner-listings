@@ -10,6 +10,7 @@ import hero2 from "@/assets/hero-2.jpg";
 import about1 from "@/assets/about-1.jpg";
 import about2 from "@/assets/about-2.jpg";
 import collo from "@/assets/collins_image.jpeg"
+import mumcollo from "@/assets/operationsmanager.jpeg"
 
 const values = [
   {
@@ -40,8 +41,8 @@ const team = [
   },
   {
     name: "Mary Wanjiku",
-    role: "Head of Sales",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&h=400&fit=crop&crop=face",
+    role: "Operations Assistant",
+    image: mumcollo,
   },
   {
     name: "John Kamau",
@@ -105,23 +106,15 @@ const About = () => {
               </p>
               <h2 className="headline-1 mt-4">Every House Tells a Story</h2>
               <p className="text-muted-foreground mt-6 leading-relaxed">
-                Founded by James Lakashe in 2010, Lakashe Homes began with a simple
-                vision: to help families find homes that truly resonate with their
-                dreams and aspirations. What started as a small family business
-                has grown into one of Nairobi's most trusted real estate companies.
+                LA KASHE is a professional real estate company dedicated to helping clients buy, sell, and invest in property with confidence. We are driven by a passion for exceptional customer service and creating a unique, personalized experience for every client.
+
               </p>
               <p className="text-muted-foreground mt-4 leading-relaxed">
-                Our founder's passion for real estate was sparked by his own family's
-                journey to find the perfect home. Understanding the challenges and
-                emotions involved in this process, he committed to creating a
-                company that would guide others through this significant life
-                decision with care, expertise, and integrity.
+               Our motto, “Where We Turn Your Dream Home into a Reality,” reflects our commitment to understanding your vision and guiding you every step of the way — from the first consultation to the final handshake. With strong market knowledge, honesty, and attention to detail, we ensure every transaction is smooth, transparent, and rewarding.
+
               </p>
               <p className="text-muted-foreground mt-4 leading-relaxed">
-                Today, we've helped over 500 families find their dream homes across
-                Nairobi's most prestigious neighborhoods. Our team combines local
-                market expertise with personalized service to ensure every client
-                receives the attention they deserve.
+                At LA KASHE, we don’t just deal in properties — we build trust, relationships, and lasting value for our clients.
               </p>
             </motion.div>
 
