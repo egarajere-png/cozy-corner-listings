@@ -40,7 +40,7 @@ const team = [
     image: collo,
   },
   {
-    name: "Mary Wanjiku",
+    name: "Judith Ndwiga",
     role: "Operations Assistant",
     image: mumcollo,
   },
