@@ -9,8 +9,9 @@ import { Target, Eye, Heart, Users } from "lucide-react";
 import hero2 from "@/assets/hero-2.jpg";
 import about1 from "@/assets/about-1.jpg";
 import about2 from "@/assets/about-2.jpg";
-import collo from "@/assets/collins_image.jpeg"
-import mumcollo from "@/assets/operationsmanager.jpeg"
+import collo from "@/assets/collins_image.jpeg";
+import mumcollo from "@/assets/operationsmanager.jpeg";
+import coo from "@/assets/coo.jpeg";
 
 const values = [
   {
@@ -45,9 +46,9 @@ const team = [
     image: mumcollo,
   },
   {
-    name: "John Kamau",
-    role: "Senior Agent",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop&crop=face",
+    name: "Edwin Kiganjo",
+    role: "Chief Operations Officer",
+    image: coo,
   },
 ];
 
