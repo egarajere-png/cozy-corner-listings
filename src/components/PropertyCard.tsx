@@ -1,98 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Bed, Bath, Square, MapPin, ArrowRight } from "lucide-react";
+import { propertiesData, PropertyDetail } from "@/data/properties";
 
-import property1 from "@/assets/property-1.jpg";
-import property2 from "@/assets/property-2.jpg";
-import property3 from "@/assets/property-3.jpg";
-import property4 from "@/assets/property-4.jpg";
-import property5 from "@/assets/property-5.jpg";
-import property6 from "@/assets/property-6.jpg";
-
-export interface Property {
-  id: string;
-  title: string;
-  location: string;
-  price: string;
-  bedrooms: number;
-  bathrooms: number;
-  area: string;
-  image: string;
-  type: string;
-  featured?: boolean;
-}
-
-export const properties: Property[] = [
-  {
-    id: "1",
-    title: "3-Bedroom Maisonette",
-    location: "Karen, Nairobi",
-    price: "KES 45,000,000",
-    bedrooms: 3,
-    bathrooms: 3,
-    area: "2,800 sq ft",
-    image: property1,
-    type: "Maisonette",
-    featured: true,
-  },
-  {
-    id: "2",
-    title: "Luxury 2-Bedroom Apartment",
-    location: "Westlands, Nairobi",
-    price: "KES 28,000,000",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: "1,500 sq ft",
-    image: property2,
-    type: "Apartment",
-    featured: true,
-  },
-  {
-    id: "3",
-    title: "4-Bedroom Family Home",
-    location: "Runda Estate, Nairobi",
-    price: "KES 85,000,000",
-    bedrooms: 4,
-    bathrooms: 4,
-    area: "4,200 sq ft",
-    image: property3,
-    type: "Villa",
-    featured: true,
-  },
-  {
-    id: "4",
-    title: "Modern 3-Bedroom Townhouse",
-    location: "Kilimani, Nairobi",
-    price: "KES 35,000,000",
-    bedrooms: 3,
-    bathrooms: 3,
-    area: "2,200 sq ft",
-    image: property4,
-    type: "Townhouse",
-  },
-  {
-    id: "5",
-    title: "Luxury Penthouse Suite",
-    location: "Upper Hill, Nairobi",
-    price: "KES 120,000,000",
-    bedrooms: 4,
-    bathrooms: 5,
-    area: "5,500 sq ft",
-    image: property5,
-    type: "Penthouse",
-  },
-  {
-    id: "6",
-    title: "Exclusive Villa Estate",
-    location: "Muthaiga, Nairobi",
-    price: "KES 150,000,000",
-    bedrooms: 5,
-    bathrooms: 6,
-    area: "6,800 sq ft",
-    image: property6,
-    type: "Villa",
-  },
-];
+// Re-export for backward compatibility
+export type Property = PropertyDetail;
+export const properties = propertiesData;
 
 interface PropertyCardProps {
   property: Property;

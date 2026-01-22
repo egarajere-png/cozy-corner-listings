@@ -6,51 +6,32 @@ import {
   Building2, Utensils, Waves, Dumbbell, ArrowLeft
 } from "lucide-react";
 import { Layout } from "@/components/layout";
-import { properties, PropertyCard } from "@/components/PropertyCard";
+import { PropertyCard } from "@/components/PropertyCard";
 import { BookingForm } from "@/components/BookingForm";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { PropertyMap } from "@/components/PropertyMap";
+import { getPropertyById, getRelatedProperties, PropertyAmenity } from "@/data/properties";
 
-// Sample gallery images for properties
-import property1 from "@/assets/property-1.jpg";
-import property2 from "@/assets/property-2.jpg";
-import property3 from "@/assets/property-3.jpg";
-import property4 from "@/assets/property-4.jpg";
-import property5 from "@/assets/property-5.jpg";
-import property6 from "@/assets/property-6.jpg";
+// Icon mapping for amenities
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Car,
+  Wifi,
+  Shield,
+  TreePine,
+  Building2,
+  Utensils,
+  Waves,
+  Dumbbell,
+};
 
-const propertyGalleryImages = [
-  property1, property2, property3, property4, property5, property6
-];
-
-// Property amenities
-const amenities = [
-  { icon: Car, label: "Parking Space" },
-  { icon: Wifi, label: "High-Speed Internet" },
-  { icon: Shield, label: "24/7 Security" },
-  { icon: TreePine, label: "Garden" },
-  { icon: Building2, label: "Elevator Access" },
-  { icon: Utensils, label: "Modern Kitchen" },
-  { icon: Waves, label: "Swimming Pool" },
-  { icon: Dumbbell, label: "Gym Access" },
-];
-
-// Property features
-const features = [
-  "Spacious living areas with natural lighting",
-  "Premium fixtures and finishes",
-  "Master bedroom with en-suite bathroom",
-  "Built-in wardrobes in all bedrooms",
-  "Fully fitted kitchen with modern appliances",
-  "Private balcony/terrace",
-  "Dedicated service quarters",
-  "Landscaped outdoor spaces",
-];
+const getAmenityIcon = (iconName: string) => {
+  return iconMap[iconName] || Building2;
+};
 
 const PropertyDetail = () => {
   const { id } = useParams();
-  const property = properties.find((p) => p.id === id);
+  const property = id ? getPropertyById(id) : undefined;
 
   if (!property) {
     return (
@@ -75,9 +56,7 @@ const PropertyDetail = () => {
   }
 
   // Get related properties (same type, excluding current)
-  const relatedProperties = properties
-    .filter((p) => p.type === property.type && p.id !== property.id)
-    .slice(0, 3);
+  const relatedProperties = getRelatedProperties(property.id, property.type, 3);
 
   return (
     <Layout>
@@ -158,7 +137,7 @@ const PropertyDetail = () => {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               {/* Property Gallery */}
-              <PropertyGallery images={propertyGalleryImages} title={property.title} />
+              <PropertyGallery images={property.gallery} title={property.title} />
 
               {/* Description */}
               <motion.div
@@ -167,19 +146,11 @@ const PropertyDetail = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="title-1 mb-6">Property Overview</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Welcome to this stunning {property.title.toLowerCase()} located in the prestigious 
-                  {property.location}. This exceptional property offers the perfect blend of luxury, 
-                  comfort, and modern design. Set in one of Nairobi's most sought-after neighborhoods, 
-                  this home provides an unparalleled living experience for discerning buyers.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mt-4">
-                  The property features {property.bedrooms} spacious bedrooms and {property.bathrooms} modern 
-                  bathrooms, spread across {property.area} of meticulously designed living space. 
-                  Every detail has been carefully considered to ensure maximum comfort and style, 
-                  from the premium fixtures to the thoughtful layout that maximizes natural light 
-                  and ventilation.
-                </p>
+                {property.overview.map((paragraph, index) => (
+                  <p key={index} className="text-muted-foreground leading-relaxed mt-4 first:mt-0">
+                    {paragraph}
+                  </p>
+                ))}
               </motion.div>
 
               {/* Features */}
@@ -190,7 +161,7 @@ const PropertyDetail = () => {
               >
                 <h2 className="title-1 mb-6">Key Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {features.map((feature) => (
+                  {property.features.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{feature}</span>
@@ -207,17 +178,20 @@ const PropertyDetail = () => {
               >
                 <h2 className="title-1 mb-6">Amenities</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  {amenities.map((amenity) => (
-                    <div
-                      key={amenity.label}
-                      className="flex flex-col items-center text-center p-4 border border-white/10 hover:border-primary/50 transition-colors"
-                    >
-                      <amenity.icon className="w-8 h-8 text-primary mb-3" />
-                      <span className="text-sm text-muted-foreground">
-                        {amenity.label}
-                      </span>
-                    </div>
-                  ))}
+                  {property.amenities.map((amenity) => {
+                    const IconComponent = getAmenityIcon(amenity.icon);
+                    return (
+                      <div
+                        key={amenity.label}
+                        className="flex flex-col items-center text-center p-4 border border-white/10 hover:border-primary/50 transition-colors"
+                      >
+                        <IconComponent className="w-8 h-8 text-primary mb-3" />
+                        <span className="text-sm text-muted-foreground">
+                          {amenity.label}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </motion.div>
 
@@ -229,10 +203,7 @@ const PropertyDetail = () => {
               >
                 <h2 className="title-1 mb-6">Location</h2>
                 <p className="text-muted-foreground mb-6">
-                  Situated in {property.location}, this property enjoys excellent proximity to 
-                  top schools, shopping centers, restaurants, and medical facilities. The neighborhood 
-                  is known for its security, serenity, and beautiful surroundings, making it ideal 
-                  for families and professionals alike.
+                  {property.locationDescription}
                 </p>
                 <PropertyMap location={property.location} />
               </motion.div>
