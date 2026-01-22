@@ -233,10 +233,10 @@ const Contact = () => {
                 <div className="text-center text-muted-foreground p-8">
                   <MapPin className="w-16 h-16 mx-auto mb-6 text-primary" />
                   <h3 className="font-forum text-2xl mb-4">Find Us Here</h3>
-                  <p className="mb-2">Karen, Nairobi</p>
+                  <p className="mb-2">Kahawa Sukari, Nairobi</p>
                   <p className="text-sm">Kenya</p>
                   <a
-                    href="https://maps.google.com"
+                    href="https://www.google.com/maps/place/Felma+Shopping+centre/@-1.195364,36.9435365,17z/data=!3m1!4b1!4m6!3m5!1s0x182f3f8ef1b25b0f:0x8fbe763cbcbdc94d!8m2!3d-1.195364!4d36.9461114!16s%2Fg%2F11fy_9j7yj?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-6 text-primary hover:underline"

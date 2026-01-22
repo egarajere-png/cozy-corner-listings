@@ -87,7 +87,7 @@ const About = () => {
             transition={{ delay: 0.6 }}
             className="body-2 text-muted-foreground mt-4 max-w-lg mx-auto"
           >
-            Your trusted partner in finding the perfect home
+            Where We Turn Your Dream Home into a Reality.
           </motion.p>
         </div>
       </section>
