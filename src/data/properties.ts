@@ -19,7 +19,7 @@ import property16 from "@/assets/property16main.jpeg";
 import property17 from "@/assets/property17main.jpeg";
 import property18 from "@/assets/property18main.jpeg";
 
-//property2 images
+//land2 images
 import land1 from "@/assets/land1.jpeg";
 import land2 from "@/assets/land2.jpeg";
 import land3m from "@/assets/land3.jpeg";
@@ -27,7 +27,12 @@ import land4 from "@/assets/land4.jpeg";
 import land5 from "@/assets/land5.jpeg";
 import land6 from "@/assets/land6.jpeg";
 
-
+// land3 Images
+import landks1 from "@/assets/landi1.jpeg";
+import landks2 from "@/assets/landi2.jpeg";
+import landks3 from "@/assets/landi3.jpeg";
+import landks4 from "@/assets/landi4.jpeg";
+import landks5 from "@/assets/landi5.jpeg";
 
 export interface PropertyAmenity {
   icon: string;
@@ -111,14 +116,46 @@ const apartmentAmenities: PropertyAmenity[] = [
   { icon: "TreePine", label: "Rooftop Garden" },
 ];
 
+// land3 Info
+const land3Gallery = [landks2, landks3, landks4, landks5, ];
+
+const landOverview = [
+"This prime 1/2 residential plot is located in the highly sought-after Kahawa Sukari area, just minutes from the Eastern Bypass. The plot is situated in a quiet, secure, and well-developed neighborhood strictly zoned for stand-alone homes only, ensuring privacy and low-density living.",
+];
+
+const landFeatures = [
+  "Strictly stand-alone residential development",
+  "Well-maintained all-weather access road",
+  "Electricity and reliable water available",
+  "Septic-tank friendly area",
+  "Perimeter wall allowed",
+  "Location & Connectivity",
+  "Easy access to Eastern Bypass",
+  "Close to Thika Road, Ruiru & Nairobi CBD",
+  "Near reputable schools, shopping centres, hospitals & churches",
+  "Double-glazed windows for noise reduction",
+  "Dedicated home office space",
+];
+
+const landAmenities: PropertyAmenity[] = [
+  
+  { icon: "Car", label: "2 Parking Spaces" },
+  { icon: "Wifi", label: "High-Speed Fiber" },
+  { icon: "Shield", label: "24/7 Security" },
+  { icon: "Building2", label: "Elevator Access" },
+  { icon: "Utensils", label: "Modern Kitchen" },
+  { icon: "Waves", label: "Shared Pool" },
+  { icon: "Dumbbell", label: "Gym Access" },
+  { icon: "TreePine", label: "Rooftop Garden" },
+];
 export const propertiesData: PropertyDetail[] = [
   {
     id: "1",
     title: "6-Bedroom Mansionette",
     location: "Kahawa Sukari, Nairobi",
     price: "KES 54,000,000",
-    bedrooms: 6,
-    bathrooms: 7,
+    bedrooms: 5,
+    bathrooms: 6,
     area: "8,500 sq ft",
     image: property1,
     type: "Mansionette",
@@ -134,17 +171,58 @@ export const propertiesData: PropertyDetail[] = [
     title: "Prime 100×100 Stand-Alone Residential Plot",
     location: "Kahawa Sukari, Nairobi",
     price: "KES 13,000,000",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: "1,500 sq ft",
+    bedrooms: 0,
+    bathrooms: 0,
+    area: "100×100",
     image: land1,
     type: "Plot",
     featured: true,
     gallery: apartmentGallery,
-    overview: apartmentOverview,
-    features: apartmentFeatures,
-    amenities: apartmentAmenities,
-    locationDescription: "Situated in the vibrant Westlands area, this apartment offers unparalleled convenience with walking distance to Sarit Centre, Westgate Mall, and numerous restaurants and entertainment venues. The neighborhood is well-connected to major transport routes and is home to many embassies and international organizations.",
+    overview: [
+      "This prime 1/2 residential plot is located in the highly sought-after Kahawa Sukari area, just minutes from the Eastern Bypass. The plot is situated in a quiet, secure, and well-developed neighborhood strictly zoned for stand-alone homes only, ensuring privacy and low-density living."
+    ],
+    features: [
+      "Strictly stand-alone residential development",
+      "Well-maintained all-weather access road",
+      "Electricity and reliable water available",
+      "Septic-tank friendly area",
+      "Perimeter wall allowed",
+      "Location & Connectivity",
+      "Easy access to Eastern Bypass",
+      "Close to Thika Road, Ruiru & Nairobi CBD",
+      "Near reputable schools, shopping centres, hospitals & churches"
+    ],
+    amenities: [{ icon: "Info", label: "No amenities available for land plots" }],
+    locationDescription: "Situated in the Kahawa Sukari area with quick access to the Eastern Bypass, nearby schools, shopping centres, hospitals and places of worship.",
+  },
+  {
+    id: "3",
+    title: "Prime 1/2 Residential Plot",
+    location: "Kahawa Sukari, Nairobi",
+    price: "KES 25,000,000",
+    bedrooms: 0,
+    bathrooms: 0,
+    area: "100×100",
+    image: landks2,
+    type: "Plot",
+    featured: false,
+    gallery: land3Gallery,
+    overview: [
+      "This prime 1/2 residential plot is located in the highly sought-after Kahawa Sukari area, just minutes from the Eastern Bypass. The plot is situated in a quiet, secure, and well-developed neighborhood strictly zoned for stand-alone homes only, ensuring privacy and low-density living. This is Ideal For Families seeking a serene and secure residential environment, Buyers looking to build an executive private home or Long-term investors in a high-appreciation area" ,
+    ],
+    features: [
+      "Strictly stand-alone residential development",
+      "Well-maintained all-weather access road",
+      "Electricity and reliable water available",
+      "Septic-tank friendly area",
+      "Perimeter wall allowed",
+      "Location & Connectivity",
+      "Easy access to Eastern Bypass",
+      "Close to Thika Road, Ruiru & Nairobi CBD",
+      "Near reputable schools, shopping centres, hospitals & churches"
+    ],
+    amenities: [{ icon: "Info", label: "No amenities available for land plots" }],
+    locationDescription: "Located in Kahawa Sukari with easy connectivity to the Eastern Bypass and local amenities.",
   },
 ];
 

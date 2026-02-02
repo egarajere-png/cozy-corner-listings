@@ -254,14 +254,14 @@ const PropertyDetail = () => {
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full overflow-hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
+                        src="@/assets/collins_image.jpeg"
                         alt="Agent"
                         className="img-cover"
                       />
                     </div>
                     <div>
-                      <p className="font-medium">John Kamau</p>
-                      <p className="text-muted-foreground text-sm">Senior Agent</p>
+                      <p className="font-medium">Collings Ndwiga</p>
+                      <p className="text-muted-foreground text-sm">Agent</p>
                     </div>
                   </div>
                   <a
@@ -269,14 +269,14 @@ const PropertyDetail = () => {
                     className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     <Mail className="w-4 h-4" />
-                    john@lakashehomes.com
+                    collinsndwiga@gmail.com
                   </a>
                   <a
-                    href="tel:+254123456789"
+                    href="tel:+254119792689"
                     className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     <Phone className="w-4 h-4" />
-                    +254 123 456 789
+                    0119792689
                   </a>
                 </div>
               </motion.div>

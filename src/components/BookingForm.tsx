@@ -16,7 +16,7 @@ export const BookingForm = () => {
     e.preventDefault();
     // Handle form submission
     console.log("Form submitted:", formData);
-    alert("Thank you for your booking request! We will contact you shortly.");
+    alert("Thank you for your booking request! We will contact you soon.");
   };
 
   const handleChange = (
@@ -41,7 +41,7 @@ export const BookingForm = () => {
               <p className="text-center text-muted-foreground mb-8">
                 Booking request{" "}
                 <a href="tel:+254123456789" className="text-primary hover:underline">
-                  +254 715 211 673 
+                  0119792689
                 </a>{" "}
                 or fill out the form
               </p>
@@ -159,7 +159,7 @@ export const BookingForm = () => {
                   href="tel:+254123456789"
                   className="text-primary text-2xl font-forum hover-underline inline-block"
                 >
-                  +254 715 211 673
+                  0119792689
                 </a>
               </div>
 
