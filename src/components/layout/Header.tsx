@@ -27,9 +27,9 @@ export const Topbar = () => {
           
           <div className="h-4 w-px bg-primary/30" />
           
-          <a href="tel:+254123456789" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+          <a href="tel:+254119792689" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
             <Phone className="w-4 h-4 text-primary" />
-            <span>+254 715 211 673</span>
+            <span>+254 119 792 689</span>
           </a>
           
           <div className="h-4 w-px bg-primary/30" />
@@ -174,14 +174,14 @@ export const Header = () => {
                   <h3 className="font-forum text-xl">Visit Us</h3>
                   <address className="text-muted-foreground not-italic text-sm">
                     Lakashe Homes,<br />
-                    Karen, Nairobi, Kenya
+                    Felma Shopping Centre, Kahawa Sukari, Nairobi, Kenya
                   </address>
                   <p className="text-muted-foreground text-sm">Open: 8:00 am - 6:00 pm</p>
                   <a
                     href="mailto:info@lakashehomes.com"
                     className="block text-muted-foreground text-sm hover:text-primary transition-colors"
                   >
-                    info@lakashehomes.com
+                    lakashehomes@gmail.com
                   </a>
                   <div className="separator mx-auto my-6" />
                   <p className="font-bold text-sm">Booking Request</p>
@@ -189,7 +189,7 @@ export const Header = () => {
                     href="tel:+254123456789"
                     className="text-primary text-xl font-forum hover-underline mx-auto"
                   >
-                    +254 123 456 789
+                    +254 119 792 689
                   </a>
                 </div>
               </div>

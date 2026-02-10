@@ -12,22 +12,22 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["Estate St, Karen City", "Nairobi, Kenya"],
+    details: ["Felma Shopping Centre, Kahawa Sukari", "Nairobi, Kenya"],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+254 123 456 789", "+254 987 654 321"],
+    details: ["+254 728 608 061", "+254 987 654 321"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@lakashehomes.com", "sales@lakashehomes.com"],
+    details: ["Lakashehomes@gmail.com"],
   },
   {
     icon: Clock,
     title: "Working Hours",
-    details: ["Monday - Friday: 8am - 6pm", "Saturday: 9am - 4pm"],
+    details: ["Monday - Friday: 8am - 6pm", "Weekends and Public Holidays: 9am - 4pm"],
   },
 ];
 

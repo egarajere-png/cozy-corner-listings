@@ -276,7 +276,7 @@ const PropertyDetail = () => {
                     className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     <Phone className="w-4 h-4" />
-                    0119792689
+                    +254 722 872 571
                   </a>
                 </div>
               </motion.div>
