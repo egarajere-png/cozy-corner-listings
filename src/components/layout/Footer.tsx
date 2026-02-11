@@ -133,7 +133,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-muted-foreground text-sm">
-            &copy; 2025 Lakashe Homes. All Rights Reserved | Crafted By Bahati Jere Egara
+            &copy; 2026 Lakashe Homes. All Rights Reserved | Crafted By Bahati Jere Egara
           </p>
         </div>
       </div>
