@@ -34,6 +34,38 @@ import landks3 from "@/assets/landi3.jpeg";
 import landks4 from "@/assets/landi4.jpeg";
 import landks5 from "@/assets/landi5.jpeg";
 
+// wundanyi property images
+import wundanyi1 from "@/assets/wundanyi1.jpeg";
+import wundanyi2 from "@/assets/wundanyi2.jpeg";
+import wundanyi3 from "@/assets/wundanyi3.jpeg";
+import wundanyi4 from "@/assets/wundanyi4.jpeg";
+import wundanyi5 from "@/assets/wundanyi5.jpeg";
+// import wundanyi6 from "@/assets/wundanyi6.jpeg";
+import wundanyi7 from "@/assets/wundanyi7.jpeg";
+import wundanyi8 from "@/assets/wundanyi8.jpeg";
+import wundanyi9 from "@/assets/wundanyi9.jpeg";
+import wundanyi10 from "@/assets/wundanyi10.jpeg";
+import wundanyi11 from "@/assets/wundanyi11.jpeg";
+import wundanyi12 from "@/assets/wundanyi12.jpeg";
+import wundanyi13 from "@/assets/wundanyi13.jpeg";
+import wundanyi14 from "@/assets/wundanyi14.jpeg";
+import wundanyi15 from "@/assets/wundanyi15.jpeg";
+import wundanyi16 from "@/assets/wundanyi16.jpeg";
+import wundanyi17 from "@/assets/wundanyi17.jpeg";
+import wundanyi18 from "@/assets/wundanyi18.jpeg";
+import wundanyi19 from "@/assets/wundanyi19.jpeg";
+import wundanyi20 from "@/assets/wundanyi20.jpeg";
+import wundanyi21 from "@/assets/wundanyi21.jpeg";
+import wundanyi22 from "@/assets/wundanyi22.jpeg";
+import wundanyi23 from "@/assets/wundanyi23.jpeg";
+import wundanyi24 from "@/assets/wundanyi24.jpeg";
+import wundanyi25 from "@/assets/wundanyi25.jpeg";
+import wundanyi26 from "@/assets/wundanyi26.jpeg";
+import wundanyi27 from "@/assets/wundanyi27.jpeg";
+import wundanyi28 from "@/assets/wundanyi28.jpeg";
+import wundanyi29 from "@/assets/wundanyi29.jpeg";
+import wundanyi30 from "@/assets/wundanyi30.jpeg";
+
 export interface PropertyAmenity {
   icon: string;
   label: string;
@@ -148,6 +180,32 @@ const landAmenities: PropertyAmenity[] = [
   { icon: "Dumbbell", label: "Gym Access" },
   { icon: "TreePine", label: "Rooftop Garden" },
 ];
+
+const wundanyiGallery = [wundanyi1, wundanyi2, wundanyi3, wundanyi4, wundanyi5, wundanyi7, wundanyi8, wundanyi9, wundanyi10, wundanyi11, wundanyi12, wundanyi13, wundanyi14, wundanyi15, wundanyi16, wundanyi17, wundanyi18, wundanyi19, wundanyi20, wundanyi21, wundanyi22, wundanyi23, wundanyi24, wundanyi25, wundanyi26, wundanyi27, wundanyi28, wundanyi29, wundanyi30]; //prop];
+
+const wundanyiOverview = [
+  "Beautiful home sitting on a 40 x 80 plot in the highly sought after Kahawa Sukari area. Located within a secure, well-developed gated community - perfect for comfortable family living.",
+]
+const wundanyiFeatures = [
+  "All Essential amenities available",
+  "Good access roads",
+  "Secure gated Community",
+  "Close to reputable schools and Churches",
+  "Near main roads and shopping centers",
+  "Easy access to Thika Superhaighway and Eastern Bypass",
+];
+
+const wundanyiAmenities: PropertyAmenity[] = [
+  { icon: "Car", label: "4 Parking Spaces" },
+  { icon: "Wifi", label: "Smart Home System" },
+  { icon: "Shield", label: "24/7 Security" },
+  { icon: "TreePine", label: "Private Garden" },
+  { icon: "Building2", label: "Ensuite Servant Quaters" },
+  { icon: "Utensils", label: "Fully Furnished Kitchen" },
+  { icon: "Waves", label: "Jacuzzi available" },
+  { icon: "Dumbbell", label: "Private Gym" },
+];
+
 export const propertiesData: PropertyDetail[] = [
   {
     id: "1",
@@ -223,6 +281,24 @@ export const propertiesData: PropertyDetail[] = [
     ],
     amenities: [{ icon: "Info", label: "No amenities available for land plots" }],
     locationDescription: "Located in Kahawa Sukari with easy connectivity to the Eastern Bypass and local amenities.",
+  },
+
+  {
+    id: "4",
+    title: "Prime 40 x 80 Manshionette Residential Home",
+    location: "Kahawa Sukari, Nairobi",
+    price: "KES 25,000,000",
+    bedrooms: 6,
+    bathrooms: 7,
+    area: "40×80 sq ft",
+    image: wundanyi1,
+    type: "Mansionette",
+    featured: true,
+    gallery: wundanyiGallery,
+    overview: wundanyiOverview,
+    features: wundanyiFeatures,
+    amenities: wundanyiAmenities,
+    locationDescription: "Located in the prestigious Kahawa Sukari neighborhood, this mansionette enjoys proximity to the Thika Superhighway, Thika Road Mall, and varioua schools such as Thika Road Academy. The area is renowned for its lush greenery, spacious plots, and serene environment, making it one of Nairobi's most desirable addresses.",
   },
 ];
 
