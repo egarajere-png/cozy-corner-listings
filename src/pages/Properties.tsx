@@ -53,7 +53,7 @@ const Properties = () => {
         </div>
       </section>
 
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <BookingForm />
     </Layout>
   );
