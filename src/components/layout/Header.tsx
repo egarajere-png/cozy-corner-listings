@@ -36,7 +36,7 @@ export const Topbar = () => {
           
           <a href="mailto:info@lakashehomes.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
             <Mail className="w-4 h-4 text-primary" />
-            <span>lakashehomes.gmail.com</span>
+            <span>lakashehomes@gmail.com</span>
           </a>
         </div>
       </div>
