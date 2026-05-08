@@ -67,7 +67,7 @@ const AdminPropertyForm = () => {
       setType(data.type);
       setOverview((data.overview as string[] | null)?.join("\n\n") ?? "");
       setFeatures((data.features as string[] | null)?.join("\n") ?? "");
-      setAmenities((data.amenities as Amenity[] | null) ?? []);
+      setAmenities((data.amenities as unknown as Amenity[] | null) ?? []);
       setGallery((data.gallery as string[] | null) ?? []);
       setCoverImage(data.cover_image ?? "");
       setAgentName(data.agent_name ?? "");
@@ -144,8 +144,8 @@ const AdminPropertyForm = () => {
     };
 
     const { error } = isEdit
-      ? await supabase.from("properties").update(payload).eq("id", id!)
-      : await supabase.from("properties").insert(payload);
+      ? await supabase.from("properties").update(payload as any).eq("id", id!)
+      : await supabase.from("properties").insert(payload as any);
 
     setSaving(false);
     if (error) return toast.error(error.message);

@@ -44,7 +44,7 @@ const AdminProperties = () => {
   };
 
   const toggleFlag = async (id: string, field: "is_featured" | "is_available", value: boolean) => {
-    const { error } = await supabase.from("properties").update({ [field]: value }).eq("id", id);
+    const { error } = await supabase.from("properties").update({ [field]: value } as any).eq("id", id);
     if (error) return toast.error(error.message);
     load();
   };
