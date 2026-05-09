@@ -230,10 +230,11 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="bg-primary text-primary-foreground px-12 py-4 text-xs uppercase tracking-widest font-bold hover:bg-primary/90 transition-colors flex items-center gap-2"
+                  disabled={submitting}
+                  className="bg-primary text-primary-foreground px-12 py-4 text-xs uppercase tracking-widest font-bold hover:bg-primary/90 transition-colors flex items-center gap-2 disabled:opacity-60"
                 >
                   <Send className="w-4 h-4" />
-                  Send Message
+                  {submitting ? "Sending…" : "Send Message"}
                 </button>
               </form>
             </motion.div>
