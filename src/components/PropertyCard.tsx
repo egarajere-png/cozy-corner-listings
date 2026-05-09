@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Bed, Bath, Square, MapPin, ArrowRight } from "lucide-react";
-import { propertiesData, PropertyDetail } from "@/data/properties";
+import { useProperties, type PropertyDetail } from "@/lib/properties";
 
 // Re-export for backward compatibility
 export type Property = PropertyDetail;
-export const properties = propertiesData;
 
 interface PropertyCardProps {
   property: Property;
@@ -23,7 +22,6 @@ export const PropertyCard = ({ property, index = 0 }: PropertyCardProps) => {
     >
       <Link to={`/property/${property.id}`} className="block">
         <div className="relative overflow-hidden hover-shine">
-          {/* Image */}
           <div className="aspect-[3/4] overflow-hidden">
             <img
               src={property.image}
@@ -32,20 +30,16 @@ export const PropertyCard = ({ property, index = 0 }: PropertyCardProps) => {
             />
           </div>
 
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-          {/* Price Tag */}
           <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 text-xs font-bold uppercase tracking-wider">
             {property.price}
           </div>
 
-          {/* Property Type */}
           <div className="absolute top-4 right-4 bg-smoky-1/80 backdrop-blur-sm text-foreground px-3 py-1 text-xs uppercase tracking-wider border border-white/10">
             {property.type}
           </div>
 
-          {/* Content */}
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <p className="text-primary text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
               <MapPin className="w-3 h-3" />
@@ -55,7 +49,6 @@ export const PropertyCard = ({ property, index = 0 }: PropertyCardProps) => {
               {property.title}
             </h3>
 
-            {/* Features */}
             <div className="flex items-center gap-4 text-muted-foreground text-sm border-t border-white/10 pt-4">
               <div className="flex items-center gap-1">
                 <Bed className="w-4 h-4 text-primary" />
@@ -78,11 +71,19 @@ export const PropertyCard = ({ property, index = 0 }: PropertyCardProps) => {
 };
 
 export const PropertyGrid = ({ limit }: { limit?: number }) => {
-  const displayProperties = limit ? properties.slice(0, limit) : properties;
+  const { properties, loading } = useProperties();
+  const display = limit ? properties.slice(0, limit) : properties;
+
+  if (loading) {
+    return <p className="text-center text-muted-foreground py-12">Loading properties…</p>;
+  }
+  if (display.length === 0) {
+    return <p className="text-center text-muted-foreground py-12">No properties available yet.</p>;
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {displayProperties.map((property, index) => (
+      {display.map((property, index) => (
         <PropertyCard key={property.id} property={property} index={index} />
       ))}
     </div>
@@ -90,6 +91,7 @@ export const PropertyGrid = ({ limit }: { limit?: number }) => {
 };
 
 export const FeaturedProperties = () => {
+  const { properties, loading } = useProperties();
   const featured = properties.filter((p) => p.featured);
 
   return (
@@ -105,11 +107,17 @@ export const FeaturedProperties = () => {
           <h2 className="headline-1 mt-4">Properties Offered</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featured.map((property, index) => (
-            <PropertyCard key={property.id} property={property} index={index} />
-          ))}
-        </div>
+        {loading ? (
+          <p className="text-center text-muted-foreground py-12">Loading properties…</p>
+        ) : featured.length === 0 ? (
+          <p className="text-center text-muted-foreground py-12">No featured properties yet.</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featured.map((property, index) => (
+              <PropertyCard key={property.id} property={property} index={index} />
+            ))}
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

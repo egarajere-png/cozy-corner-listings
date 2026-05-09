@@ -5,6 +5,8 @@ import {
   MapPin, Phone, Mail, Clock, Send, 
   User, MessageSquare, Building2 
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 import hero3 from "@/assets/hero-3.jpg";
 
@@ -40,10 +42,24 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We will get back to you shortly.");
+    setSubmitting(true);
+    const { error } = await supabase.from("inquiries").insert({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null,
+      subject: formData.subject || null,
+      message: formData.message,
+    });
+    setSubmitting(false);
+    if (error) {
+      toast({ title: "Could not send", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Message sent", description: "We'll get back to you shortly." });
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
@@ -214,10 +230,11 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="bg-primary text-primary-foreground px-12 py-4 text-xs uppercase tracking-widest font-bold hover:bg-primary/90 transition-colors flex items-center gap-2"
+                  disabled={submitting}
+                  className="bg-primary text-primary-foreground px-12 py-4 text-xs uppercase tracking-widest font-bold hover:bg-primary/90 transition-colors flex items-center gap-2 disabled:opacity-60"
                 >
                   <Send className="w-4 h-4" />
-                  Send Message
+                  {submitting ? "Sending…" : "Send Message"}
                 </button>
               </form>
             </motion.div>
