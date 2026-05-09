@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, MapPin, Clock, User, Users, Calendar, MessageSquare, Send } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 export const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -11,12 +13,26 @@ export const BookingForm = () => {
     time: "09:00",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    alert("Thank you for your booking request! We will contact you soon.");
+    setSubmitting(true);
+    const message = `Site visit request for ${formData.persons} person(s) on ${formData.date} at ${formData.time}.${formData.message ? `\n\nNote: ${formData.message}` : ""}`;
+    const { error } = await supabase.from("inquiries").insert({
+      name: formData.name,
+      email: `${formData.phone}@booking.lakashehomes.com`,
+      phone: formData.phone,
+      subject: "Site Visit Booking",
+      message,
+    });
+    setSubmitting(false);
+    if (error) {
+      toast({ title: "Could not send", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Booking received", description: "We'll be in touch shortly." });
+    setFormData({ name: "", phone: "", persons: "1", date: "", time: "09:00", message: "" });
   };
 
   const handleChange = (
