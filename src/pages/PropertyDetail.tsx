@@ -11,7 +11,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { PropertyMap } from "@/components/PropertyMap";
-import { getPropertyById, getRelatedProperties, PropertyAmenity } from "@/data/properties";
+import { useProperty, useProperties } from "@/lib/properties";
 
 // Icon mapping for amenities
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -31,7 +31,18 @@ const getAmenityIcon = (iconName: string) => {
 
 const PropertyDetail = () => {
   const { id } = useParams();
-  const property = id ? getPropertyById(id) : undefined;
+  const { property, loading } = useProperty(id);
+  const { properties: allProperties } = useProperties();
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center pt-24">
+          <p className="text-muted-foreground">Loading property…</p>
+        </div>
+      </Layout>
+    );
+  }
 
   if (!property) {
     return (
@@ -55,8 +66,9 @@ const PropertyDetail = () => {
     );
   }
 
-  // Get related properties (same type, excluding current)
-  const relatedProperties = getRelatedProperties(property.id, property.type, 3);
+  const relatedProperties = allProperties
+    .filter((p) => p.id !== property.id && p.type === property.type)
+    .slice(0, 3);
 
   return (
     <Layout>
