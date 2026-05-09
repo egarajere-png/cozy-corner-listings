@@ -149,10 +149,11 @@ export const BookingForm = () => {
 
               <button
                 type="submit"
-                className="w-full md:w-auto bg-primary text-primary-foreground px-12 py-4 text-xs uppercase tracking-widest font-bold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                disabled={submitting}
+                className="w-full md:w-auto bg-primary text-primary-foreground px-12 py-4 text-xs uppercase tracking-widest font-bold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 <Send className="w-4 h-4" />
-                Book Visit
+                {submitting ? "Sending…" : "Book Visit"}
               </button>
             </form>
           </motion.div>
