@@ -111,12 +111,12 @@ const AdminAuth = () => {
           </button>
         </form>
 
-        <button
+        {/* <button
           onClick={() => setMode(mode === "login" ? "signup" : "login")}
           className="w-full mt-6 text-xs uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
         >
           {mode === "login" ? "Need an account? Sign up" : "Already have an account? Sign in"}
-        </button>
+        </button> */}
       </motion.div>
     </div>
   );
