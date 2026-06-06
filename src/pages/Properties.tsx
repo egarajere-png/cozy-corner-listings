@@ -49,7 +49,7 @@ const Properties = () => {
       {/* Properties Grid */}
       <section className="py-16 lg:py-24 bg-smoky-2">
         <div className="container mx-auto px-4">
-          <PropertyGrid />
+          <PropertyFiltersGrid />
         </div>
       </section>
 
