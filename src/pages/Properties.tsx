@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
-import { PropertyGrid } from "@/components/PropertyCard";
+import { PropertyFiltersGrid } from "@/components/PropertyFilters";
 import { TestimonialSection } from "@/components/Testimonial";
 import { BookingForm } from "@/components/BookingForm";
 
@@ -49,7 +49,7 @@ const Properties = () => {
       {/* Properties Grid */}
       <section className="py-16 lg:py-24 bg-smoky-2">
         <div className="container mx-auto px-4">
-          <PropertyGrid />
+          <PropertyFiltersGrid />
         </div>
       </section>
 
