@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
-import { PropertyGrid } from "@/components/PropertyCard";
+import { PropertyFiltersGrid } from "@/components/PropertyFilters";
 import { TestimonialSection } from "@/components/Testimonial";
 import { BookingForm } from "@/components/BookingForm";
 
